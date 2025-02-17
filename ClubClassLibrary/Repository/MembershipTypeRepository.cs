@@ -17,11 +17,14 @@ namespace ClubClassLibrary.Repository
 
         public async  Task Delete(int id)
         {
-            if (id != 0)
+            if (id != 0) { 
                 _context.MembershipTypes.Remove(await GetById(id));
+                await Save();
+
+            }
         }
 
-        public async Task<IEnumerable<MembershipType>> GetAll()
+        public async Task<List<MembershipType>> GetAll()
         {
             return await _context.MembershipTypes.ToListAsync();
         }

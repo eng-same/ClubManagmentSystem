@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            groupBox1 = new GroupBox();
-            textBox3 = new TextBox();
-            label3 = new Label();
-            textBox2 = new TextBox();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            label1 = new Label();
+            groupBoxInputs = new GroupBox();
+            btnClose = new Button();
+            btnClear = new Button();
+            txtbBasebrice = new TextBox();
+            labMembershipTypeBasebrice = new Label();
+            txtbDiscription = new TextBox();
+            labMembershipTypeDiscription = new Label();
+            txtbName = new TextBox();
+            labMembershipTypeName = new Label();
             panel1 = new Panel();
             labShowTime = new Label();
             labTime = new Label();
@@ -43,80 +45,109 @@
             labUser = new Label();
             grdmembershipTypes = new DataGridView();
             membershipTypeRepositoryBindingSource = new BindingSource(components);
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            groupBox1.SuspendLayout();
+            btnAddMembershipType = new Button();
+            btnDeleteMembershipType = new Button();
+            btnUpdateMembershipType = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
+            groupBoxInputs.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)grdmembershipTypes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)membershipTypeRepositoryBindingSource).BeginInit();
             SuspendLayout();
             // 
-            // groupBox1
+            // groupBoxInputs
             // 
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(545, 25);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(351, 205);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            groupBoxInputs.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            groupBoxInputs.BackColor = SystemColors.ActiveCaption;
+            groupBoxInputs.Controls.Add(btnClose);
+            groupBoxInputs.Controls.Add(btnClear);
+            groupBoxInputs.Controls.Add(txtbBasebrice);
+            groupBoxInputs.Controls.Add(labMembershipTypeBasebrice);
+            groupBoxInputs.Controls.Add(txtbDiscription);
+            groupBoxInputs.Controls.Add(labMembershipTypeDiscription);
+            groupBoxInputs.Controls.Add(txtbName);
+            groupBoxInputs.Controls.Add(labMembershipTypeName);
+            groupBoxInputs.Location = new Point(545, 25);
+            groupBoxInputs.Name = "groupBoxInputs";
+            groupBoxInputs.Size = new Size(351, 205);
+            groupBoxInputs.TabIndex = 0;
+            groupBoxInputs.TabStop = false;
+            groupBoxInputs.Text = "Membership Type Info";
             // 
-            // textBox3
+            // btnClose
             // 
-            textBox3.Location = new Point(82, 135);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(237, 27);
-            textBox3.TabIndex = 7;
+            btnClose.BackColor = Color.Red;
+            btnClose.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClose.ForeColor = SystemColors.ButtonHighlight;
+            btnClose.Location = new Point(218, 170);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(94, 29);
+            btnClose.TabIndex = 6;
+            btnClose.Text = "Close";
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
             // 
-            // label3
+            // btnClear
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(26, 138);
-            label3.Name = "label3";
-            label3.Size = new Size(50, 20);
-            label3.TabIndex = 6;
-            label3.Text = "label3";
+            btnClear.Location = new Point(108, 170);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(94, 29);
+            btnClear.TabIndex = 6;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
-            // textBox2
+            // txtbBasebrice
             // 
-            textBox2.Location = new Point(82, 92);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(237, 27);
-            textBox2.TabIndex = 5;
+            txtbBasebrice.Location = new Point(108, 135);
+            txtbBasebrice.Name = "txtbBasebrice";
+            txtbBasebrice.Size = new Size(237, 27);
+            txtbBasebrice.TabIndex = 7;
             // 
-            // label2
+            // labMembershipTypeBasebrice
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(26, 95);
-            label2.Name = "label2";
-            label2.Size = new Size(50, 20);
-            label2.TabIndex = 4;
-            label2.Text = "label2";
+            labMembershipTypeBasebrice.AutoSize = true;
+            labMembershipTypeBasebrice.Location = new Point(26, 138);
+            labMembershipTypeBasebrice.Name = "labMembershipTypeBasebrice";
+            labMembershipTypeBasebrice.Size = new Size(77, 20);
+            labMembershipTypeBasebrice.TabIndex = 6;
+            labMembershipTypeBasebrice.Text = "Base brice";
             // 
-            // textBox1
+            // txtbDiscription
             // 
-            textBox1.Location = new Point(82, 43);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(237, 27);
-            textBox1.TabIndex = 3;
+            txtbDiscription.Location = new Point(108, 92);
+            txtbDiscription.Name = "txtbDiscription";
+            txtbDiscription.Size = new Size(237, 27);
+            txtbDiscription.TabIndex = 5;
             // 
-            // label1
+            // labMembershipTypeDiscription
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(26, 46);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 2;
-            label1.Text = "label1";
+            labMembershipTypeDiscription.AutoSize = true;
+            labMembershipTypeDiscription.Location = new Point(26, 95);
+            labMembershipTypeDiscription.Name = "labMembershipTypeDiscription";
+            labMembershipTypeDiscription.Size = new Size(81, 20);
+            labMembershipTypeDiscription.TabIndex = 4;
+            labMembershipTypeDiscription.Text = "Discription";
+            // 
+            // txtbName
+            // 
+            txtbName.Location = new Point(108, 43);
+            txtbName.Name = "txtbName";
+            txtbName.Size = new Size(237, 27);
+            txtbName.TabIndex = 3;
+            // 
+            // labMembershipTypeName
+            // 
+            labMembershipTypeName.AutoSize = true;
+            labMembershipTypeName.Location = new Point(26, 46);
+            labMembershipTypeName.Name = "labMembershipTypeName";
+            labMembershipTypeName.Size = new Size(49, 20);
+            labMembershipTypeName.TabIndex = 2;
+            labMembershipTypeName.Text = "Name";
             // 
             // panel1
             // 
+            panel1.BackColor = SystemColors.ButtonHighlight;
             panel1.Controls.Add(labShowTime);
             panel1.Controls.Add(labTime);
             panel1.Controls.Add(labShowUser);
@@ -169,60 +200,80 @@
             // 
             // grdmembershipTypes
             // 
+            grdmembershipTypes.AllowUserToAddRows = false;
+            grdmembershipTypes.AllowUserToDeleteRows = false;
+            grdmembershipTypes.AllowUserToResizeRows = false;
+            grdmembershipTypes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            grdmembershipTypes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            grdmembershipTypes.BackgroundColor = SystemColors.ButtonHighlight;
             grdmembershipTypes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             grdmembershipTypes.Location = new Point(22, 25);
+            grdmembershipTypes.MultiSelect = false;
             grdmembershipTypes.Name = "grdmembershipTypes";
+            grdmembershipTypes.ReadOnly = true;
             grdmembershipTypes.RowHeadersWidth = 51;
+            grdmembershipTypes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grdmembershipTypes.Size = new Size(517, 382);
             grdmembershipTypes.TabIndex = 2;
+            grdmembershipTypes.CellClick += grdmembershipTypes_CellClick;
             // 
             // membershipTypeRepositoryBindingSource
             // 
             membershipTypeRepositoryBindingSource.DataSource = typeof(ClubClassLibrary.Repository.MembershipTypeRepository);
             // 
-            // button1
+            // btnAddMembershipType
             // 
-            button1.Location = new Point(571, 266);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 3;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnAddMembershipType.Location = new Point(571, 266);
+            btnAddMembershipType.Name = "btnAddMembershipType";
+            btnAddMembershipType.Size = new Size(94, 29);
+            btnAddMembershipType.TabIndex = 3;
+            btnAddMembershipType.Text = "Add";
+            btnAddMembershipType.UseVisualStyleBackColor = true;
+            btnAddMembershipType.Click += btnAddMembershipType_Click;
             // 
-            // button2
+            // btnDeleteMembershipType
             // 
-            button2.Location = new Point(571, 315);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 4;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            btnDeleteMembershipType.Location = new Point(571, 315);
+            btnDeleteMembershipType.Name = "btnDeleteMembershipType";
+            btnDeleteMembershipType.Size = new Size(94, 29);
+            btnDeleteMembershipType.TabIndex = 4;
+            btnDeleteMembershipType.Text = "Delete";
+            btnDeleteMembershipType.UseVisualStyleBackColor = true;
+            btnDeleteMembershipType.Click += btnDeleteMembershipType_Click;
             // 
-            // button3
+            // btnUpdateMembershipType
             // 
-            button3.Location = new Point(571, 362);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 29);
-            button3.TabIndex = 5;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            btnUpdateMembershipType.Location = new Point(571, 362);
+            btnUpdateMembershipType.Name = "btnUpdateMembershipType";
+            btnUpdateMembershipType.Size = new Size(94, 29);
+            btnUpdateMembershipType.TabIndex = 5;
+            btnUpdateMembershipType.Text = "Update";
+            btnUpdateMembershipType.UseVisualStyleBackColor = true;
+            btnUpdateMembershipType.Click += btnUpdateMembershipType_Click;
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
             // 
             // frmMembershipsType
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Highlight;
             ClientSize = new Size(946, 485);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnUpdateMembershipType);
+            Controls.Add(btnDeleteMembershipType);
+            Controls.Add(btnAddMembershipType);
             Controls.Add(grdmembershipTypes);
             Controls.Add(panel1);
-            Controls.Add(groupBox1);
+            Controls.Add(groupBoxInputs);
             Name = "frmMembershipsType";
             Text = "frmMembershipsType";
             Load += frmMembershipsType_Load;
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            groupBoxInputs.ResumeLayout(false);
+            groupBoxInputs.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)grdmembershipTypes).EndInit();
@@ -232,22 +283,25 @@
 
         #endregion
 
-        private GroupBox groupBox1;
+        private GroupBox groupBoxInputs;
         private Panel panel1;
         private Label labShowTime;
         private Label labTime;
         private Label labShowUser;
         private Label labUser;
-        private TextBox textBox3;
-        private Label label3;
-        private TextBox textBox2;
-        private Label label2;
-        private TextBox textBox1;
-        private Label label1;
+        private TextBox txtbBasebrice;
+        private Label labMembershipTypeBasebrice;
+        private TextBox txtbDiscription;
+        private Label labMembershipTypeDiscription;
+        private TextBox txtbName;
+        private Label labMembershipTypeName;
         private DataGridView grdmembershipTypes;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button btnAddMembershipType;
+        private Button btnDeleteMembershipType;
+        private Button btnUpdateMembershipType;
         private BindingSource membershipTypeRepositoryBindingSource;
+        private System.Windows.Forms.Timer timer1;
+        private Button btnClear;
+        private Button btnClose;
     }
 }
