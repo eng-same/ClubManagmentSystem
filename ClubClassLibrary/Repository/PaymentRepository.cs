@@ -27,7 +27,7 @@ namespace ClubClassLibrary.Repository
 
         public async Task<List<Payment>> GetAll()
         {
-            return await _context.Payments.ToListAsync();
+            return await _context.Payments.Include(x=> x.Member ).Include(x=>x.Membership ).ToListAsync();
         }
 
         public async Task<Payment> GetById(int id)

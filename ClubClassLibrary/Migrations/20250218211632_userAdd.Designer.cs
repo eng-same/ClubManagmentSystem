@@ -4,6 +4,7 @@ using ClubClassLibrary.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClubClassLibrary.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250218211632_userAdd")]
+    partial class userAdd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,7 +61,7 @@ namespace ClubClassLibrary.Migrations
                             Id = 1,
                             Address = "123 Main St",
                             BirthDate = new DateTime(1990, 5, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            JoinDate = new DateTime(2025, 2, 18, 23, 27, 14, 327, DateTimeKind.Local).AddTicks(6193),
+                            JoinDate = new DateTime(2025, 2, 18, 23, 16, 31, 824, DateTimeKind.Local).AddTicks(2383),
                             Name = "John Doe",
                             PhoneNumber = "1234567890"
                         },
@@ -67,7 +70,7 @@ namespace ClubClassLibrary.Migrations
                             Id = 2,
                             Address = "456 Elm St",
                             BirthDate = new DateTime(1985, 8, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            JoinDate = new DateTime(2025, 2, 18, 23, 27, 14, 327, DateTimeKind.Local).AddTicks(6214),
+                            JoinDate = new DateTime(2025, 2, 18, 23, 16, 31, 824, DateTimeKind.Local).AddTicks(2400),
                             Name = "Jane Smith",
                             PhoneNumber = "9876543210"
                         });
@@ -222,10 +225,10 @@ namespace ClubClassLibrary.Migrations
                         {
                             Id = 1,
                             Address = "123 Main St",
-                            DateCreated = new DateTime(2025, 2, 18, 23, 27, 14, 439, DateTimeKind.Local).AddTicks(1327),
+                            DateCreated = new DateTime(2025, 2, 18, 23, 16, 31, 948, DateTimeKind.Local).AddTicks(2536),
                             Email = "admin@example.com",
-                            Name = "Admin",
-                            Password = "$2a$11$2dOlF8TaEUAED0vm7cN54eavRH3QOaKEOghAqNJ79NvueoVp46Deu",
+                            Name = "Admin User",
+                            Password = "$2a$11$mURUNCkbVkejWceHL.s3Ce8.BkVD0S67s2gzJAjKTGjgj7X8lLa.u",
                             Phone = "123-456-7890",
                             Role = "Admin",
                             Status = "Active"
@@ -234,10 +237,10 @@ namespace ClubClassLibrary.Migrations
                         {
                             Id = 2,
                             Address = "456 Oak Ave",
-                            DateCreated = new DateTime(2025, 2, 18, 23, 27, 14, 539, DateTimeKind.Local).AddTicks(9777),
+                            DateCreated = new DateTime(2025, 2, 18, 23, 16, 32, 55, DateTimeKind.Local).AddTicks(6908),
                             Email = "user1@example.com",
                             Name = "Regular User 1",
-                            Password = "$2a$11$uOG9V248ngP/Jk7bc6WXyOD/azcwtaA5QXeZVhaZH5nKdNNBIUTWa",
+                            Password = "$2a$11$Esj.YqKC3lrGrTrFlhzjqe84WQVgSyYhjcVm3LI2KHKmIGa/3ySkG",
                             Phone = "987-654-3210",
                             Role = "User",
                             Status = "Active"
@@ -246,10 +249,10 @@ namespace ClubClassLibrary.Migrations
                         {
                             Id = 3,
                             Address = "789 Pine Ln",
-                            DateCreated = new DateTime(2025, 2, 11, 23, 27, 14, 645, DateTimeKind.Local).AddTicks(6075),
+                            DateCreated = new DateTime(2025, 2, 11, 23, 16, 32, 162, DateTimeKind.Local).AddTicks(2288),
                             Email = "user2@example.com",
                             Name = "Regular User 2",
-                            Password = "$2a$11$Had/qsygdJhd2y/Pskr2pu1R/D3MUKKub69frOxdlsaFWn6VWzUNC",
+                            Password = "$2a$11$xVbtgyD/hpOdLIsyHPYGu.UAFrZrG2TAqRoIJ35XpLdAi7J5nD5bC",
                             Phone = "555-123-4567",
                             Role = "User",
                             Status = "Pending"

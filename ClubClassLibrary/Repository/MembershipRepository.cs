@@ -27,7 +27,7 @@ namespace ClubClassLibrary.Repository
 
         public async Task<List<Membership>> GetAll()
         {
-            return await _context.Memberships.ToListAsync();
+            return await _context.Memberships.Include(m=> m.Member).Include(m=>m.MembershipType).ToListAsync();
         }
 
         public async Task<Membership> GetById(int id)
@@ -44,6 +44,21 @@ namespace ClubClassLibrary.Repository
         {
             _context.Memberships.Update(membership);
             await Save();
+        }
+
+        public async Task<List<Membership>> GetByPrice (decimal price_from, decimal price_to)
+        {
+            return await _context.Memberships.Where(m => m.Price >= price_from && m.Price<= price_to).Include(m => m.Member).Include(m => m.MembershipType).ToListAsync();
+        }
+
+        public async Task<List<Membership>> GetByStartDate(DateTime DateStart_from, DateTime DateStart_to)
+        {
+            return await _context.Memberships.Where(m => m.StartDate>= DateStart_from &&m.StartDate<= DateStart_to).ToListAsync();
+        }
+
+        public async Task<List<Membership>> GetByEndDate(DateTime DateEnd_from, DateTime DateEnd_to)
+        {
+            return await _context.Memberships.Where(m => m.EndDate >= DateEnd_from && m.EndDate <= DateEnd_to).ToListAsync();
         }
     }
 }

@@ -14,6 +14,7 @@ namespace ClubClassLibrary.Data
         public DbSet<Membership> Memberships { get; set; }
         public DbSet<MembershipType> MembershipTypes { get; set; }
         public DbSet<Payment> Payments { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -53,6 +54,46 @@ namespace ClubClassLibrary.Data
             modelBuilder.Entity<Member>().HasData(
                 new Member { Id = 1, Name = "John Doe", PhoneNumber = "1234567890", BirthDate = new DateTime(1990, 5, 20), Address = "123 Main St" },
                 new Member { Id = 2, Name = "Jane Smith", PhoneNumber = "9876543210", BirthDate = new DateTime(1985, 8, 10), Address = "456 Elm St" }
+            );
+            // Seed Users with Hashed Passwords
+            modelBuilder.Entity<User>().HasData(
+                new User
+                {
+                    Id = 1, // Important: IDs must be unique and should not clash with any existing or future data.
+                    Name = "Admin",
+                    Password = BCrypt.Net.BCrypt.HashPassword("Admin"), // Hash the password!
+                    Role = "Admin",
+                    Email = "admin@example.com",
+                    Phone = "123-456-7890",
+                    Address = "123 Main St",
+                    Status = "Active",
+                    DateCreated = DateTime.Now
+                },
+                new User
+                {
+                    Id = 2,
+                    Name = "Regular User 1",
+                    Password = BCrypt.Net.BCrypt.HashPassword("userpass1"), // Hash the password!
+                    Role = "User",
+                    Email = "user1@example.com",
+                    Phone = "987-654-3210",
+                    Address = "456 Oak Ave",
+                    Status = "Active",
+                    DateCreated = DateTime.Now
+                },
+                new User
+                {
+                    Id = 3,  // Unique ID!
+                    Name = "Regular User 2",
+                    Password = BCrypt.Net.BCrypt.HashPassword("userpass2"), // Hash the password!
+                    Role = "User",
+                    Email = "user2@example.com",
+                    Phone = "555-123-4567",
+                    Address = "789 Pine Ln",
+                    Status = "Pending",
+                    DateCreated = DateTime.Now.AddDays(-7)
+                }
+            // Add more users as needed
             );
 
             base.OnModelCreating(modelBuilder);

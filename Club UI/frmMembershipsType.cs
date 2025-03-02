@@ -17,15 +17,17 @@ namespace Club_UI
     {
         MembershipTypeRepository repo = new MembershipTypeRepository();
         private int  selected_id=0;
-        public frmMembershipsType()
+        public string _role;
+        public frmMembershipsType(string role)
         {
+            _role = role;
             InitializeComponent();
         }
 
         private void frmMembershipsType_Load(object sender, EventArgs e)
         {
             Show_data();
-            labShowUser.Text = "Admain";
+            labShowUser.Text = _role;
             Add_mode();
 
         }
@@ -128,8 +130,8 @@ namespace Club_UI
 
             if (e.ColumnIndex>=0 &&e.RowIndex>=0 )
             {
-                int id= selected_id = Convert.ToInt32(grdmembershipTypes.Rows[e.RowIndex].Cells[0].Value);
-                var data = repo.GetById(id).Result;
+                selected_id = Convert.ToInt32(grdmembershipTypes.Rows[e.RowIndex].Cells[0].Value);
+                var data = repo.GetById(selected_id).Result;
                 txtbName.Text = data.Name;
                 txtbDiscription.Text = data.Description;
                 txtbBasebrice.Text = data.BasePrice.ToString();

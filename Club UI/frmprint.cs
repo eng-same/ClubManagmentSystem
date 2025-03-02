@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace Club_UI
 {
-    public partial class frmAbout : Form
+    public partial class frmprint : Form
     {
-        public string _role;
-        public frmAbout(string role)
+        public frmprint()
         {
             InitializeComponent();
-            _role = role;
         }
     }
 }

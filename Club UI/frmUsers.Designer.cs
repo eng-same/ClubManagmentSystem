@@ -1,6 +1,6 @@
 ﻿namespace Club_UI
 {
-    partial class frmMembers
+    partial class frmUsers
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnUpdateMembers = new Button();
-            btnDeleteMember = new Button();
-            btnAddMembers = new Button();
+            panelTop = new Panel();
+            panel2 = new Panel();
+            btnUpdateUser = new Button();
+            btnDeleteUser = new Button();
+            btnAddUser = new Button();
             grdMembers = new DataGridView();
             panel1 = new Panel();
             labShowTime = new Label();
@@ -38,52 +40,73 @@
             labShowUser = new Label();
             labUser = new Label();
             groupBoxInputs = new GroupBox();
-            label1 = new Label();
-            dtpBirthDate = new DateTimePicker();
+            label2 = new Label();
+            txtbEmail = new TextBox();
+            label3 = new Label();
+            txtbPassword = new TextBox();
+            lblDateCreated = new Label();
+            dtpCreatedDate = new DateTimePicker();
             btnClose = new Button();
             btnClear = new Button();
             txtbAddress = new TextBox();
             labMembershipTypeBasebrice = new Label();
-            txtbPhoneNumber = new TextBox();
+            txtbPhone = new TextBox();
             labMembershipTypeDiscription = new Label();
             txtbName = new TextBox();
             labMembershipTypeName = new Label();
-            panel2 = new Panel();
-            panelTop = new Panel();
+            combRole = new ComboBox();
+            combStatus = new ComboBox();
+            label1 = new Label();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)grdMembers).BeginInit();
             panel1.SuspendLayout();
             groupBoxInputs.SuspendLayout();
             SuspendLayout();
             // 
-            // btnUpdateMembers
+            // panelTop
             // 
-            btnUpdateMembers.Location = new Point(620, 513);
-            btnUpdateMembers.Name = "btnUpdateMembers";
-            btnUpdateMembers.Size = new Size(94, 29);
-            btnUpdateMembers.TabIndex = 11;
-            btnUpdateMembers.Text = "Update";
-            btnUpdateMembers.UseVisualStyleBackColor = true;
-            btnUpdateMembers.Click += btnUpdateMembers_Click;
+            panelTop.BackColor = Color.SteelBlue;
+            panelTop.Dock = DockStyle.Top;
+            panelTop.Location = new Point(0, 0);
+            panelTop.Name = "panelTop";
+            panelTop.Size = new Size(916, 50);
+            panelTop.TabIndex = 21;
             // 
-            // btnDeleteMember
+            // panel2
             // 
-            btnDeleteMember.Location = new Point(620, 573);
-            btnDeleteMember.Name = "btnDeleteMember";
-            btnDeleteMember.Size = new Size(94, 29);
-            btnDeleteMember.TabIndex = 10;
-            btnDeleteMember.Text = "Delete";
-            btnDeleteMember.UseVisualStyleBackColor = true;
-            btnDeleteMember.Click += btnDeleteMember_Click;
+            panel2.BackColor = Color.RoyalBlue;
+            panel2.Dock = DockStyle.Right;
+            panel2.Location = new Point(916, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(224, 555);
+            panel2.TabIndex = 20;
             // 
-            // btnAddMembers
+            // btnUpdateUser
             // 
-            btnAddMembers.Location = new Point(620, 455);
-            btnAddMembers.Name = "btnAddMembers";
-            btnAddMembers.Size = new Size(94, 29);
-            btnAddMembers.TabIndex = 9;
-            btnAddMembers.Text = "Add";
-            btnAddMembers.UseVisualStyleBackColor = true;
-            btnAddMembers.Click += btnAddMembers_Click;
+            btnUpdateUser.Location = new Point(805, 431);
+            btnUpdateUser.Name = "btnUpdateUser";
+            btnUpdateUser.Size = new Size(94, 29);
+            btnUpdateUser.TabIndex = 19;
+            btnUpdateUser.Text = "Update";
+            btnUpdateUser.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteUser
+            // 
+            btnDeleteUser.Location = new Point(805, 491);
+            btnDeleteUser.Name = "btnDeleteUser";
+            btnDeleteUser.Size = new Size(94, 29);
+            btnDeleteUser.TabIndex = 18;
+            btnDeleteUser.Text = "Delete";
+            btnDeleteUser.UseVisualStyleBackColor = true;
+            // 
+            // btnAddUser
+            // 
+            btnAddUser.Location = new Point(805, 373);
+            btnAddUser.Name = "btnAddUser";
+            btnAddUser.Size = new Size(94, 29);
+            btnAddUser.TabIndex = 17;
+            btnAddUser.Text = "Add";
+            btnAddUser.UseVisualStyleBackColor = true;
             // 
             // grdMembers
             // 
@@ -93,15 +116,14 @@
             grdMembers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             grdMembers.BackgroundColor = SystemColors.ButtonHighlight;
             grdMembers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grdMembers.Location = new Point(0, 59);
+            grdMembers.Location = new Point(0, -26);
             grdMembers.MultiSelect = false;
             grdMembers.Name = "grdMembers";
             grdMembers.ReadOnly = true;
             grdMembers.RowHeadersWidth = 51;
             grdMembers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             grdMembers.Size = new Size(774, 267);
-            grdMembers.TabIndex = 8;
-            grdMembers.CellClick += grdMembers_CellClick;
+            grdMembers.TabIndex = 16;
             // 
             // panel1
             // 
@@ -111,16 +133,16 @@
             panel1.Controls.Add(labShowUser);
             panel1.Controls.Add(labUser);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 638);
+            panel1.Location = new Point(0, 555);
             panel1.Name = "panel1";
-            panel1.Size = new Size(991, 37);
-            panel1.TabIndex = 7;
+            panel1.Size = new Size(1140, 37);
+            panel1.TabIndex = 15;
             // 
             // labShowTime
             // 
             labShowTime.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             labShowTime.AutoSize = true;
-            labShowTime.Location = new Point(815, 8);
+            labShowTime.Location = new Point(1755, -55);
             labShowTime.Name = "labShowTime";
             labShowTime.Size = new Size(36, 20);
             labShowTime.TabIndex = 7;
@@ -131,7 +153,7 @@
             labTime.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             labTime.AutoSize = true;
             labTime.BackColor = SystemColors.ButtonHighlight;
-            labTime.Location = new Point(767, 8);
+            labTime.Location = new Point(1707, -55);
             labTime.Name = "labTime";
             labTime.Size = new Size(42, 20);
             labTime.TabIndex = 6;
@@ -141,7 +163,7 @@
             // 
             labShowUser.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             labShowUser.AutoSize = true;
-            labShowUser.Location = new Point(120, 8);
+            labShowUser.Location = new Point(120, -55);
             labShowUser.Name = "labShowUser";
             labShowUser.Size = new Size(27, 20);
             labShowUser.TabIndex = 5;
@@ -151,7 +173,7 @@
             // 
             labUser.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             labUser.AutoSize = true;
-            labUser.Location = new Point(29, 8);
+            labUser.Location = new Point(29, -55);
             labUser.Name = "labUser";
             labUser.Size = new Size(85, 20);
             labUser.TabIndex = 4;
@@ -162,37 +184,77 @@
             groupBoxInputs.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             groupBoxInputs.BackColor = Color.SteelBlue;
             groupBoxInputs.Controls.Add(label1);
-            groupBoxInputs.Controls.Add(dtpBirthDate);
+            groupBoxInputs.Controls.Add(label4);
+            groupBoxInputs.Controls.Add(combStatus);
+            groupBoxInputs.Controls.Add(combRole);
+            groupBoxInputs.Controls.Add(label2);
+            groupBoxInputs.Controls.Add(txtbEmail);
+            groupBoxInputs.Controls.Add(label3);
+            groupBoxInputs.Controls.Add(txtbPassword);
+            groupBoxInputs.Controls.Add(lblDateCreated);
+            groupBoxInputs.Controls.Add(dtpCreatedDate);
             groupBoxInputs.Controls.Add(btnClose);
             groupBoxInputs.Controls.Add(btnClear);
             groupBoxInputs.Controls.Add(txtbAddress);
             groupBoxInputs.Controls.Add(labMembershipTypeBasebrice);
-            groupBoxInputs.Controls.Add(txtbPhoneNumber);
+            groupBoxInputs.Controls.Add(txtbPhone);
             groupBoxInputs.Controls.Add(labMembershipTypeDiscription);
             groupBoxInputs.Controls.Add(txtbName);
             groupBoxInputs.Controls.Add(labMembershipTypeName);
-            groupBoxInputs.Location = new Point(12, 351);
+            groupBoxInputs.Location = new Point(12, 266);
             groupBoxInputs.Name = "groupBoxInputs";
-            groupBoxInputs.Size = new Size(511, 270);
-            groupBoxInputs.TabIndex = 6;
+            groupBoxInputs.Size = new Size(762, 270);
+            groupBoxInputs.TabIndex = 14;
             groupBoxInputs.TabStop = false;
             groupBoxInputs.Text = "Member Info";
             // 
-            // label1
+            // label2
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(25, 183);
-            label1.Name = "label1";
-            label1.Size = new Size(76, 20);
-            label1.TabIndex = 9;
-            label1.Text = "Birth Date";
+            label2.AutoSize = true;
+            label2.Location = new Point(383, 49);
+            label2.Name = "label2";
+            label2.Size = new Size(70, 20);
+            label2.TabIndex = 14;
+            label2.Text = "Password";
             // 
-            // dtpBirthDate
+            // txtbEmail
             // 
-            dtpBirthDate.Location = new Point(136, 183);
-            dtpBirthDate.Name = "dtpBirthDate";
-            dtpBirthDate.Size = new Size(237, 27);
-            dtpBirthDate.TabIndex = 8;
+            txtbEmail.Location = new Point(493, 91);
+            txtbEmail.Name = "txtbEmail";
+            txtbEmail.Size = new Size(237, 27);
+            txtbEmail.TabIndex = 13;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(383, 94);
+            label3.Name = "label3";
+            label3.Size = new Size(46, 20);
+            label3.TabIndex = 12;
+            label3.Text = "Email";
+            // 
+            // txtbPassword
+            // 
+            txtbPassword.Location = new Point(493, 46);
+            txtbPassword.Name = "txtbPassword";
+            txtbPassword.Size = new Size(237, 27);
+            txtbPassword.TabIndex = 11;
+            // 
+            // lblDateCreated
+            // 
+            lblDateCreated.AutoSize = true;
+            lblDateCreated.Location = new Point(25, 183);
+            lblDateCreated.Name = "lblDateCreated";
+            lblDateCreated.Size = new Size(97, 20);
+            lblDateCreated.TabIndex = 9;
+            lblDateCreated.Text = "Date Created";
+            // 
+            // dtpCreatedDate
+            // 
+            dtpCreatedDate.Location = new Point(136, 181);
+            dtpCreatedDate.Name = "dtpCreatedDate";
+            dtpCreatedDate.Size = new Size(237, 27);
+            dtpCreatedDate.TabIndex = 8;
             // 
             // btnClose
             // 
@@ -205,7 +267,6 @@
             btnClose.TabIndex = 6;
             btnClose.Text = "Close";
             btnClose.UseVisualStyleBackColor = false;
-            btnClose.Click += btnClose_Click;
             // 
             // btnClear
             // 
@@ -215,7 +276,6 @@
             btnClear.TabIndex = 6;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
-            btnClear.Click += btnClear_Click;
             // 
             // txtbAddress
             // 
@@ -233,12 +293,12 @@
             labMembershipTypeBasebrice.TabIndex = 6;
             labMembershipTypeBasebrice.Text = "Address";
             // 
-            // txtbPhoneNumber
+            // txtbPhone
             // 
-            txtbPhoneNumber.Location = new Point(136, 91);
-            txtbPhoneNumber.Name = "txtbPhoneNumber";
-            txtbPhoneNumber.Size = new Size(237, 27);
-            txtbPhoneNumber.TabIndex = 5;
+            txtbPhone.Location = new Point(136, 91);
+            txtbPhone.Name = "txtbPhone";
+            txtbPhone.Size = new Size(237, 27);
+            txtbPhone.TabIndex = 5;
             // 
             // labMembershipTypeDiscription
             // 
@@ -265,41 +325,55 @@
             labMembershipTypeName.TabIndex = 2;
             labMembershipTypeName.Text = "Name";
             // 
-            // panel2
+            // combRole
             // 
-            panel2.BackColor = Color.RoyalBlue;
-            panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(767, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(224, 638);
-            panel2.TabIndex = 12;
+            combRole.FormattingEnabled = true;
+            combRole.Location = new Point(493, 136);
+            combRole.Name = "combRole";
+            combRole.Size = new Size(151, 28);
+            combRole.TabIndex = 15;
             // 
-            // panelTop
+            // combStatus
             // 
-            panelTop.BackColor = Color.SteelBlue;
-            panelTop.Dock = DockStyle.Top;
-            panelTop.Location = new Point(0, 0);
-            panelTop.Name = "panelTop";
-            panelTop.Size = new Size(767, 50);
-            panelTop.TabIndex = 13;
+            combStatus.FormattingEnabled = true;
+            combStatus.Location = new Point(493, 180);
+            combStatus.Name = "combStatus";
+            combStatus.Size = new Size(151, 28);
+            combStatus.TabIndex = 16;
             // 
-            // frmMembers
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(383, 139);
+            label1.Name = "label1";
+            label1.Size = new Size(39, 20);
+            label1.TabIndex = 18;
+            label1.Text = "Role";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(383, 184);
+            label4.Name = "label4";
+            label4.Size = new Size(49, 20);
+            label4.TabIndex = 17;
+            label4.Text = "Status";
+            // 
+            // frmUsers
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightGray;
-            ClientSize = new Size(991, 675);
+            ClientSize = new Size(1140, 592);
             Controls.Add(panelTop);
             Controls.Add(panel2);
-            Controls.Add(btnUpdateMembers);
-            Controls.Add(btnDeleteMember);
-            Controls.Add(btnAddMembers);
+            Controls.Add(btnUpdateUser);
+            Controls.Add(btnDeleteUser);
+            Controls.Add(btnAddUser);
             Controls.Add(grdMembers);
             Controls.Add(panel1);
             Controls.Add(groupBoxInputs);
-            Name = "frmMembers";
-            Text = "frmMembers";
-            Load += frmMembers_Load;
+            Name = "frmUsers";
+            Text = "frmUsers";
             ((System.ComponentModel.ISupportInitialize)grdMembers).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -310,9 +384,11 @@
 
         #endregion
 
-        private Button btnUpdateMembers;
-        private Button btnDeleteMember;
-        private Button btnAddMembers;
+        private Panel panelTop;
+        private Panel panel2;
+        private Button btnUpdateUser;
+        private Button btnDeleteUser;
+        private Button btnAddUser;
         private DataGridView grdMembers;
         private Panel panel1;
         private Label labShowTime;
@@ -320,17 +396,23 @@
         private Label labShowUser;
         private Label labUser;
         private GroupBox groupBoxInputs;
+        private Label lblDateCreated;
+        private DateTimePicker dtpCreatedDate;
         private Button btnClose;
         private Button btnClear;
         private TextBox txtbAddress;
         private Label labMembershipTypeBasebrice;
-        private TextBox txtbPhoneNumber;
+        private TextBox txtbPhone;
         private Label labMembershipTypeDiscription;
         private TextBox txtbName;
         private Label labMembershipTypeName;
-        private Panel panel2;
-        private DateTimePicker dtpBirthDate;
-        private Panel panelTop;
+        private Label label2;
+        private TextBox txtbEmail;
+        private Label label3;
+        private TextBox txtbPassword;
         private Label label1;
+        private Label label4;
+        private ComboBox combStatus;
+        private ComboBox combRole;
     }
 }
